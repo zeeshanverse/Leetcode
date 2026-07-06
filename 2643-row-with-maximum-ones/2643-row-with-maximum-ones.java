@@ -1,23 +1,18 @@
 class Solution {
     public int[] rowAndMaximumOnes(int[][] mat) {
-        int maxOnes = -1;
-        int rowIndex = 0;
+        int ind = -1 ;
+        int maxcount = -1 ;
 
-        for (int i = 0; i < mat.length; i++) {
-            int count = 0;
-
-            for (int j = 0; j < mat[i].length; j++) {
-                if (mat[i][j] == 1) {
-                    count++;
-                }
+        for(int i = 0 ; i < mat.length ; i++ ) {
+            int countrows = 0 ;
+            for(int j = 0 ; j < mat[0].length ; j++ ) {
+                countrows += mat[i][j] ;
             }
-
-            if (count > maxOnes) {
-                maxOnes = count;
-                rowIndex = i;
+            if(countrows > maxcount ) {
+                maxcount = countrows ;
+                ind = i ;
             }
         }
-
-        return new int[]{rowIndex, maxOnes};
+        return new int[]{ind , maxcount} ;
     }
 }

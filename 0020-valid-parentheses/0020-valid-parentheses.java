@@ -1,27 +1,17 @@
 class Solution {
     public boolean isValid(String s) {
 
-        char[] st = new char[s.length()];
-        int top = -1;
+        while (true) {
+            String temp = s.replace("()", "")
+                           .replace("{}", "")
+                           .replace("[]", "");
 
-        for (char ch : s.toCharArray()) {
+            if (temp.equals(s))
+                break;
 
-            if (ch == '(' || ch == '{' || ch == '[') {
-                st[++top] = ch;
-            } else {
-
-                if (top == -1)
-                    return false;
-
-                char open = st[top--];
-
-                if ((ch == ')' && open != '(') ||
-                    (ch == '}' && open != '{') ||
-                    (ch == ']' && open != '['))
-                    return false;
-            }
+            s = temp;
         }
 
-        return top == -1;
+        return s.isEmpty();
     }
 }

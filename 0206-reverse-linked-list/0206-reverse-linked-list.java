@@ -11,7 +11,7 @@
 class Solution {
     public ListNode reverseList(ListNode head) {
         // Stack<Integer> st = new Stack<>() ;
-
+        //brute force
         // ListNode temp = head ;
 
         // while(temp != null ) {
@@ -26,15 +26,27 @@ class Solution {
         //     temp = temp.next ;
         // }
         // return head ;
-        ListNode temp = head ;
-        ListNode prev = null ;
 
-        while(temp != null ) {
-            ListNode front = temp.next ;
-            temp.next = prev ;
-            prev = temp ;
-            temp = front ;
-        }
-        return prev ;
+        // optimal
+        // ListNode temp = head ;
+        // ListNode prev = null ;
+
+        // while(temp != null ) {
+        //     ListNode front = temp.next ;
+        //     temp.next = prev ;
+        //     prev = temp ;
+        //     temp = front ;
+        // }
+        // return prev ;
+        //recursive 
+
+        if(head == null || head.next == null ) return head ;
+
+        ListNode newHead = reverseList(head.next) ;
+        ListNode front = head.next ;
+        front.next = head ;
+        head.next = null ;
+
+        return newHead ;
     }
 }

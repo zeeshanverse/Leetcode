@@ -28,25 +28,26 @@ class Solution {
         // return head ;
 
         // optimal
-        // ListNode temp = head ;
-        // ListNode prev = null ;
+        ListNode temp = head ;
+        ListNode prev = null ;
 
-        // while(temp != null ) {
-        //     ListNode front = temp.next ;
-        //     temp.next = prev ;
-        //     prev = temp ;
-        //     temp = front ;
-        // }
-        // return prev ;
-        //recursive 
+        while(temp != null ) {
+            ListNode front = temp.next ;
+            temp.next = prev ;
+            prev = temp ;
+            temp = front ;
+        }
+        return prev ;
+        
+        // recursive 
 
-        if(head == null || head.next == null ) return head ;
+        // if(head == null || head.next == null ) return head ;
 
-        ListNode newHead = reverseList(head.next) ;
-        ListNode front = head.next ;
-        front.next = head ;
-        head.next = null ;
+        // ListNode newHead = reverseList(head.next) ;
+        // ListNode front = head.next ;
+        // front.next = head ;
+        // head.next = null ;
 
-        return newHead ;
+        // return newHead ;
     }
 }

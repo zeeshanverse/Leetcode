@@ -11,6 +11,41 @@
 class Solution {
     public ListNode sortList(ListNode head) {
 
+    //     if(head == null || head.next == null ) return null ;
+
+    //     int count = 0 ;
+    //     ListNode temp = head ;
+
+    //     while(temp != null ) {
+    //         count++ ;
+    //         temp = temp.next ;
+    //     }
+    //     int [] nums = convert(head , count ) ; 
+    //     Arrays.sort(nums) ;
+    //     int i = 0 ;
+    //     temp = head ;
+
+    //     while(temp != null ) {
+    //         temp.val = nums[i] ;
+    //         temp = temp.next ;
+    //         i++ ;
+    //     }
+    //     return head ;
+    // }
+    // int [] convert (ListNode head , int n ) {
+
+    //     int [] arr = new int[n] ;
+    //     ListNode temp = head ;
+
+    //     int i = 0 ;
+    //     while(temp != null ) {
+    //         arr[i] = temp.val ;
+    //         temp = temp.next ;
+    //         i++ ;
+    //     }
+    //     return arr ;
+    // }
+
         if(head == null || head.next == null ) return head ;
         
         ListNode mid = findMid(head) ;

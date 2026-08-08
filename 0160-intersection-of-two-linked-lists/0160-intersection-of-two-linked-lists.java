@@ -64,7 +64,9 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         //optimal approach 
-
+        
+        if(headA == null || headB == null ) return null ;
+        
         ListNode temp1 = headA ;
         ListNode temp2 = headB ;
 

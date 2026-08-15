@@ -43,7 +43,7 @@ class Solution {
             if(count == size ) return temp ;
             temp = temp.next ;
         }
-        return head ;
+        return null ;
         // ListNode temp = head ;
         // k -= 1 ;
         // while(temp != null && k > 0 ) {

@@ -10,35 +10,59 @@
  */
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode temp = head ;
+        ListNode nextNode ;
+        ListNode prevNode = null ;
 
-        if (head == null || k == 1) {
-            return head;
-        }
-
-        // Check whether we have k nodes
-        ListNode temp = head;
-
-        for (int i = 0; i < k; i++) {
-            if (temp == null) {
-                return head;
+        while(temp != null ) {
+            ListNode kNode = findKNode(temp , k ) ;
+            if(kNode == null ) {
+                if(prevNode != null ) prevNode.next = temp ;
+                break ;
             }
-            temp = temp.next;
+            nextNode = kNode.next ;
+            kNode.next = null ;
+
+            reverse(temp) ;
+
+            if(temp == head ) head = kNode ;
+            else prevNode.next = kNode ;
+
+            prevNode = temp ;
+            temp = nextNode ;
         }
+        return head ;
+    }
 
-        // Reverse first k nodes
-        ListNode prev = null;
-        ListNode curr = head;
+    ListNode findKNode(ListNode head , int size ) {
+        ListNode temp = head ;
+        int count = 0 ;
 
-        for (int i = 0; i < k; i++) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        while(temp != null ) {
+            count++ ;
+            if(count == size ) return temp ;
+            temp = temp.next ;
         }
+        return head ;
+        // ListNode temp = head ;
+        // k -= 1 ;
+        // while(temp != null && k > 0 ) {
+        //     k-- ;
+        //     temp = temp.next ;
+        // }
+        // return temp ;
+    }
 
-        // head is now the last node of this group
-        head.next = reverseKGroup(curr, k);
+    ListNode reverse(ListNode head ) {
+        ListNode temp = head ;
+        ListNode prev = null ;
 
-        return prev;
+        while(temp != null ) {
+            ListNode front = temp.next ;
+            temp.next = prev ;
+            prev = temp ;
+            temp = front ;
+        }
+        return prev ;
     }
 }

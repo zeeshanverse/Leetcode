@@ -15,7 +15,7 @@ class Solution {
                 return ;
             }
         }
-        if(i == arr.length || sum > target ) return ;
+        if(i == n || sum > target ) return ;
         nums.add(arr[i]) ;
         sum += arr[i] ;
 

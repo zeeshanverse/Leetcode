@@ -3,7 +3,8 @@ class Solution {
         HashMap<Character , String> map = new HashMap<>() ;
         
         List<String> res = new ArrayList<>() ;
-
+        map.put('0', "");
+        map.put('1', "");
         map.put('2' , "abc") ;
         map.put('3' , "def") ;
         map.put('4' , "ghi") ;

@@ -1,5 +1,5 @@
 class Solution {
-    int[][] directions = {{1 , 0 } , {-1 , 0 } , {0 , 1} , {0 , -1 }} ; 
+    // int[][] directions = {{1 , 0 } , {-1 , 0 } , {0 , 1} , {0 , -1 }} ; 
 
     public boolean exist(char[][] board, String word) {
         int m = board.length ;
@@ -20,14 +20,18 @@ class Solution {
         char temp = board[i][j] ;
         board[i][j] = '$' ;
 
-        for(int[] dir : directions ) {
-            int new_i = i + dir[0] ;
-            int new_j = j + dir[1] ;
+        // for(int[] dir : directions ) {
+        //     int new_i = i + dir[0] ;
+        //     int new_j = j + dir[1] ;
 
-            if(find(ind + 1 , new_i , new_j , board , word , m , n )) return true ;
-        }
+        //     if(find(ind + 1 , new_i , new_j , board , word , m , n )) return true ;
+        // }
+        boolean found = find(ind + 1 , i + 1 , j , board , word , m , n ) ||
+                        find(ind + 1 , i - 1 , j , board , word , m , n ) ||
+                        find(ind + 1 , i , j + 1, board , word , m , n ) ||
+                        find(ind + 1 , i , j - 1 , board , word , m , n ) ;
         board[i][j] = temp ;
 
-        return false ;
+        return found ;
     }
 }

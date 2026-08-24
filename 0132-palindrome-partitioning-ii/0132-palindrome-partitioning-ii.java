@@ -12,13 +12,11 @@ class Solution {
     int solve(int ind , String s , int[] dp ){
         if(ind == s.length()) return 0 ;
 
-        // String temp = "" ;
         int minPart = Integer.MAX_VALUE ;
 
         if(dp[ind] != -1 ) return dp[ind] ;
 
         for(int i = ind ; i < s.length() ; i++ ) {
-            // temp += s.charAt(i) ;
             if(isPal(s , ind , i)) {
                 int part = 1 + solve(i + 1 , s , dp) ;
 

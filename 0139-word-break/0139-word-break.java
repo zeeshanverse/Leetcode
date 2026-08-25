@@ -1,25 +1,21 @@
 class Solution {
+    private Boolean dp[] ;
+
     public boolean wordBreak(String s, List<String> wordDict) {
+        dp = new Boolean[s.length()] ;
 
-        HashSet<String> set = new HashSet<>(wordDict);
+        return solve( 0 , s , wordDict) ;
+    }
 
-        int n = s.length();
+    boolean solve(int ind , String s , List<String> dict ) {
+        if(ind == s.length()) return true ;
 
-        boolean[] dp = new boolean[n + 1];
+        if(dp[ind] != null ) return dp[ind] ;
 
-        dp[0] = true;
-
-        for (int i = 1; i <= n; i++) {
-
-            for (int j = 0; j < i; j++) {
-
-                if (dp[j] && set.contains(s.substring(j, i))) {
-                    dp[i] = true;
-                    break;
-                }
-            }
+        for(int i = ind + 1; i <= s.length() ; i++ ) {
+            String temp = s.substring(ind , i ) ;
+            if(dict.contains(temp) && solve(i , s , dict ) ) return dp[ind] = true ;
         }
-
-        return dp[n];
+        return dp[ind] = false ;
     }
 }

@@ -1,8 +1,5 @@
 class Solution {
-    // private Boolean dp[] ;
-
     public List<String> wordBreak(String s, List<String> wordDict) {
-        // dp = new Boolean[s.length()] ;
         HashSet<String> set = new HashSet<>() ;
         List<String> ans = new ArrayList<>() ;
 
@@ -19,8 +16,6 @@ class Solution {
             ans.add(word.trim()) ;
             return ;
         }
-
-        // if(dp[ind] != null ) return dp[ind] ;
         
         for(int i = ind + 1; i <= s.length() ; i++ ) {
             String temp = s.substring(ind , i ) ;

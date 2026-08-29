@@ -1,16 +1,14 @@
 class Solution {
     public String[] findRelativeRanks(int[] score) {
         
-        int n = score.length;
-        
-        int[][] sortedPairs = new int[n][2];
-        for (int i = 0 ; i < n ; i++) sortedPairs[i] = new int[] {i, score[i]};
+        int[][] sortedPairs = new int[score.length][2];
+        for (int i = 0 ; i < score.length ; i++) sortedPairs[i] = new int[] {i, score[i]};
         
         Arrays.sort(sortedPairs, (x, y) -> (y[1] - x[1]));
         
-        String[] ans = new String[n];
+        String[] ans = new String[score.length];
         
-        for (int i = 0 ; i < n ; i++) {
+        for (int i = 0 ; i < score.length ; i++) {
             
             if (i == 0) {
                 ans[sortedPairs[i][0]] = "Gold Medal";

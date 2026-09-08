@@ -9,7 +9,6 @@ class Solution {
             ans[i] = sum ;
         }
         
-
         return ans ;
     }
 }

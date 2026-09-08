@@ -3,8 +3,6 @@ class Solution {
         
         String [] words = s.split(" ") ;
 
-        String ans = String.join(" " , Arrays.copyOfRange(words, 0 , k )) ;
-
-        return ans ; 
+        return String.join(" " , Arrays.copyOfRange(words, 0 , k )) ;
     }
 }

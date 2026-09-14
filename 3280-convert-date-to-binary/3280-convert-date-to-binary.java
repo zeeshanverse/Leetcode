@@ -6,8 +6,6 @@ class Solution {
         int month = Integer.parseInt(parts[1]);
         int day = Integer.parseInt(parts[2]);
 
-        return Integer.toBinaryString(year) + "-" +
-               Integer.toBinaryString(month) + "-" +
-               Integer.toBinaryString(day);
+        return Integer.toBinaryString(year) + "-" + Integer.toBinaryString(month) + "-" + Integer.toBinaryString(day);
     }
 }

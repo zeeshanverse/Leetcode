@@ -1,7 +1,6 @@
 class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int n = intervals.length ;
-        // int m = intervals[0].length ;
 
         ArrayList<int[]> res = new ArrayList<>() ;
 
@@ -9,6 +8,7 @@ class Solution {
 
         while(i < n && intervals[i][1] < newInterval[0] ) {
             res.add(intervals[i]) ;
+            
             i++ ;
         }
 

@@ -17,10 +17,7 @@ class Solution {
         int gcs = 0 ;
 
 
-        for(int i : sTime ) {
-            if(i > eTime[ending]) ending++ ;
-            else gcs++ ;
-        }
+        for(int i : sTime ) if(i > eTime[ending]) ending++ ; else gcs++ ;
 
         return gcs ;
     }

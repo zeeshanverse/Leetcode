@@ -14,9 +14,9 @@ class Solution {
 
         for(int i = k - 1 ; i >= 0 ; i-- ) {
             lsum -= cardPoints[i] ;
-            rsum += cardPoints[rindex] ;
+            rsum += cardPoints[rindex--] ;
 
-            rindex-- ;
+            // rindex-- ;
 
             maxSum = Math.max(maxSum , lsum + rsum ) ;
         }

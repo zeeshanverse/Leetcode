@@ -1,7 +1,8 @@
 class Solution {
     public String minWindow(String s, String t) {
 
-        if(s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length()) return new String() ; 
+        if(s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length()) 
+            return new String() ; 
 
         int [] map = new int[128] ;
 
